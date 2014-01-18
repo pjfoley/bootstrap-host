@@ -1,0 +1,11 @@
+# The location to use for storing cached Git repos
+#:cachedir: '/root/tmp/bootstrap/cache-r10k'
+:cachedir: '/root/tmp/bootstrap/cache-r10k'
+
+# A list of git repositories to create
+:sources:
+# This will clone the git repository and instantiate an environment per
+# branch in /etc/puppet/environments
+  :plops:
+    remote: 'git@github.com:pjfoley/bootstrap-host'
+    basedir: '/root/tmp/bootstrap/puppet/environments'

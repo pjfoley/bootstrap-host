@@ -1,0 +1,8 @@
+---
+:backends:
+  - yaml
+:yaml:
+  :datadir: /root/tmp/bootstrap/puppet/hieradata
+:hierarchy:
+  - "node/%{fqdn}"
+  - common

@@ -1,0 +1,15 @@
+---
+network_config:
+  eth0:
+    ensure: present
+    family: inet
+    method: static
+    ipaddress: '10.0.0.1'
+    netmask: '255.255.255.0'
+    onboot: true
+
+host:
+  creator.mgnt.local:
+    ensure: present
+    host_aliases: creator
+    ip: '10.0.0.1'
