@@ -13,7 +13,3 @@ host:
     ensure: present
     host_aliases: dna
     ip: '10.0.0.101'
-  dna.mgnt.local:
-    ensure: present
-    host_aliases: dna
-    ip: '127.0.1.1'
