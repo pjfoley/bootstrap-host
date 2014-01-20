@@ -7,5 +7,5 @@
 # This will clone the git repository and instantiate an environment per
 # branch in /etc/puppet/environments
   :plops:
-    remote: 'git@github.com:pjfoley/bootstrap-host'
+    remote: 'https://github.com/pjfoley/bootstrap-host.git'
     basedir: '/root/tmp/bootstrap/puppet/environments'
