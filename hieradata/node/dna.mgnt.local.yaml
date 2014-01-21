@@ -13,5 +13,5 @@ host:
     ensure: present
     host_aliases: dna
     ip: '10.0.0.101'
-  dna.localdomain:
+  dna.%{::domainname}:
     ensure: absent
