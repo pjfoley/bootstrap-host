@@ -1,9 +1,9 @@
 # Source user information through hiera
-$ssh_users=hiera('ssh_users')
+$ssh_users=hiera('ssh_users', {})
 $ssh_root_keys =  $ssh_users['root']['ssh_keys']
 
 # Source network information from hiera
-$net_config=hiera('network_config')
+$net_config=hiera('network_config', {})
 
 # Source host information from hiera
 $host_information=hiera('host', {})
