@@ -7,5 +7,5 @@ mod "adrien/boolean"
 mod "puppetlabs/vcsrepo"
 
 mod 'dotfiles',
-  :git => 'git://github.com/pjfoley/puppet-dotfiles.git,
+  :git => 'git://github.com/pjfoley/puppet-dotfiles.git',
   :ref => '0.1.0'
