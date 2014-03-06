@@ -13,3 +13,9 @@ host:
     ensure: present
     host_aliases: dna
     ip: '10.0.0.101'
+
+dotfiles:
+  '/root':
+    dotfiles: '/root/.dotfiles'
+    owner: 'root'
+    group: 'root'

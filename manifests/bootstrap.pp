@@ -8,6 +8,9 @@ $net_config=hiera('network_config', {})
 # Source host information from hiera
 $host_information=hiera('host', {})
 
+# Source host information from hiera
+$dotfiles_information=hiera('dotfiles', {})
+
 # Add a place with the proper permissions for the SSH related configs
 file { '/root/.ssh':
   ensure  => directory,
@@ -36,3 +39,4 @@ $ssh_key_defaults = {
 create_resources('ssh_authorized_key', $ssh_root_keys, $ssh_key_defaults)
 create_resources('network_config', $net_config)
 create_resources('host', $host_information)
+create_resources('dotfiles', $dotfiles_information)
