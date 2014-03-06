@@ -23,5 +23,6 @@ dotfiles:
 
 vcsrepo:
   '/root/.dotfiles':
+    ensure: present
     provider: 'git'
     source: 'git://github.com/pjfoley/dotfiles-home.git'
