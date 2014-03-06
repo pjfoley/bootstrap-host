@@ -8,4 +8,4 @@ mod "puppetlabs/vcsrepo"
 
 mod 'dotfiles',
   :git => 'git://github.com/pjfoley/puppet-dotfiles.git',
-  :ref => '0.1.0'
+  :ref => '0.1.1'
