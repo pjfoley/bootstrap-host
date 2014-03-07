@@ -12,3 +12,16 @@ network_config:
     family: inet
     method: dhcp
     onboot: true
+
+dotfiles:
+  '/root':
+    dotfiles: '/root/.dotfiles'
+    owner: 'root'
+    group: 'root'
+    require: Vcsrepo[/root/.dotfiles]
+
+vcsrepo:
+  '/root/.dotfiles':
+    ensure: present
+    provider: 'git'
+    source: 'git://github.com/pjfoley/dotfiles-home.git'
