@@ -2,7 +2,7 @@
 :backends:
   - yaml
 :yaml:
-  :datadir: /root/tmp/puppet/environments/production/hieradata
+  :datadir: /root/tmp/bootstrap/puppet/environments/production/hieradata
 :hierarchy:
   - "node/%{fqdn}"
   - common
