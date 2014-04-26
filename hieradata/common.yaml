@@ -11,9 +11,9 @@ users_bootstrap:
           - 'no-X11-forwarding'
           - 'command="echo Root login via ssh disabled".;echo;sleep 10"'
   pjfoley:
+    ensure: present
     groups: ["sudo"]
     uid: 1001
-    gid: 1001
     ssh_authorized_keys:
       pjfoley@bootstrap:
         type: 'ssh-rsa'
