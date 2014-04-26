@@ -2,7 +2,7 @@
 users_bootstrap:
   root:
     ssh_authorized_keys:
-      bootstrap:
+      root@bootstrap:
         type: 'ssh-rsa'
         key: 'AAAAB3NzaC1yc2EAAAABIwAAAQEA1ZpF3Yh5jN5aqYh/xbM0q4Ea2RVzH2PnSYRNj/z16wT6pi/QzKgWRy4KeSbIy+LBdlP+jssSL7GorcvLIOtPisJR3qIuuq/x90Z0SXRB8obZWwVJF6AOclUaqcDMMhnCN3HkDUHtQMyp5hglgVtWoSC+29LL2knWuxgG/P2kBk4lWvAHJqkOTnqkfsrHrgHfW+txUGkFTOQZkzKeVb9Hi0Eny+IA1i41AWuGtC8z6AzLJRCz9Av0vJZly+fUZVHren1alZUp6Rqhr9moherLovY7rX1xFExXeFFW45pFl1TkJeEgvNF19zr41w+EgdXBo7Ojqhy1wBnHGVgBxlzNZQ=='
         options: 
@@ -17,7 +17,7 @@ users_bootstrap:
     shell: '/bin/bash'
     password: '*'
     ssh_authorized_keys:
-      bootstrap:
+      pjfoley@bootstrap:
         type: 'ssh-rsa'
         key: 'AAAAB3NzaC1yc2EAAAABIwAAAQEA1ZpF3Yh5jN5aqYh/xbM0q4Ea2RVzH2PnSYRNj/z16wT6pi/QzKgWRy4KeSbIy+LBdlP+jssSL7GorcvLIOtPisJR3qIuuq/x90Z0SXRB8obZWwVJF6AOclUaqcDMMhnCN3HkDUHtQMyp5hglgVtWoSC+29LL2knWuxgG/P2kBk4lWvAHJqkOTnqkfsrHrgHfW+txUGkFTOQZkzKeVb9Hi0Eny+IA1i41AWuGtC8z6AzLJRCz9Av0vJZly+fUZVHren1alZUp6Rqhr9moherLovY7rX1xFExXeFFW45pFl1TkJeEgvNF19zr41w+EgdXBo7Ojqhy1wBnHGVgBxlzNZQ=='
 
