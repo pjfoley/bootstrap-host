@@ -34,6 +34,11 @@ dotfiles:
     owner: 'root'
     group: 'root'
     require: Vcsrepo[/root/.dotfiles]
+  '/home/pjfoley':
+    dotfiles: '/home/pjfoley/.dotfiles'
+    owner: 'pjfoley'
+    group: 'pjfoley'
+    require: Vcsrepo[/home/pjfoley/.dotfiles]
 
 vcsrepo:
   '/root/.dotfiles':
