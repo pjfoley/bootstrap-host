@@ -49,3 +49,4 @@ vcsrepo:
     ensure: present
     provider: 'git'
     source: 'git://github.com/pjfoley/dotfiles-home.git'
+    require: User[pjfoley]
