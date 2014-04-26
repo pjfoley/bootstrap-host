@@ -13,25 +13,25 @@ $dotfiles_information=hiera('dotfiles', {})
 $dotfiles_repo_information=hiera('vcsrepo', {})
 
 # Add a place with the proper permissions for the SSH related configs
-file { '/root/.ssh':
-  ensure  => directory,
-  owner   => root,
-  group   => root,
-  mode    => '0700',
-}
+#file { '/root/.ssh':
+#  ensure  => directory,
+#  owner   => root,
+#  group   => root,
+#  mode    => '0700',
+#}
 
 # Add an authorized_keys file with proper permissions
-file { '/root/.ssh/authorized_keys':
-  ensure  => present,
-  owner   => root,
-  group   => root,
-  mode    => '0600',
-  require => File['/root/.ssh'],
-}
+#file { '/root/.ssh/authorized_keys':
+#  ensure  => present,
+#  owner   => root,
+#  group   => root,
+#  mode    => '0600',
+#  require => File['/root/.ssh'],
+#}
 
-Ssh_authorized_key {
-  require => File['/root/.ssh/authorized_keys']
-}
+#Ssh_authorized_key {
+#  require => File['/root/.ssh/authorized_keys']
+#}
 
 $ssh_key_defaults = {
   user  => root,
