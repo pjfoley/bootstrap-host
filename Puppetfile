@@ -6,6 +6,7 @@ mod "adrien/filemapper", '1.1.2'
 mod "adrien/boolean", '1.0.1'
 mod "puppetlabs/vcsrepo", '0.2.0'
 mod "nanliu/staging", '0.4.0'
+mod "mthibaut/users", '1.0.11'
 
 mod 'dotfiles',
   :git => 'git://github.com/pjfoley/puppet-dotfiles.git',
