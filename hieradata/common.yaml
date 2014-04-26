@@ -15,6 +15,7 @@ users_bootstrap:
     uid: 1001
     managehome: true
     shell: '/bin/bash'
+    password: '*'
     ssh_authorized_keys:
       bootstrap:
         type: 'ssh-rsa'
