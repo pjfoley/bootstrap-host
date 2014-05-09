@@ -50,3 +50,8 @@ vcsrepo:
     provider: 'git'
     source: 'git://github.com/pjfoley/dotfiles-home.git'
     require: User[pjfoley]
+
+apt::source:
+  'ifoley.local':
+    location: 'http://i.ifoley.local/deb'
+    repos: 'binary'

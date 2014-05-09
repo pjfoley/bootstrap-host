@@ -1,6 +1,10 @@
 
 users { 'bootstrap': }
 
+class { 'apt' : }
+
+include apt::source
+
 # Source network information from hiera
 $net_config=hiera('network_config', {})
 
