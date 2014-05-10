@@ -4,8 +4,9 @@ users { 'bootstrap': }
 class { 'apt' : }
 
 apt::source { 'ifoley.local' :
-    location => 'http://i.ifoley.local/deb',
-      repos  => 'binary/',
+    location      => 'http://i.ifoley.local/deb',
+      repos       => 'main',
+      include_src => false,
 }
 
 # Source network information from hiera
