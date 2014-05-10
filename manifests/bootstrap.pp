@@ -3,7 +3,10 @@ users { 'bootstrap': }
 
 class { 'apt' : }
 
-include apt::source
+apt::source { 'ifoley.local' :
+    location => 'http://i.ifoley.local/deb',
+      repos  => 'binary/',
+}
 
 # Source network information from hiera
 $net_config=hiera('network_config', {})
