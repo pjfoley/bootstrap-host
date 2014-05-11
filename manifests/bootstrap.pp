@@ -5,6 +5,7 @@ class { 'apt' : }
 
 package { 'libpam-ssh-agent-sudo':
   ensure  => installed,
+  require => Apt::Source['ifoley.local'],
 }
 
 include sudo
@@ -25,12 +26,12 @@ create_resources('vcsrepo', $dotfiles_repo_information)
 $dotfiles_information=hiera('dotfiles', {})
 create_resources('dotfiles', $dotfiles_information)
 
-$pam_services_defaults = {
-  require => Package['libpam-ssh-agent-sudo'],
-}
+#$pam_services_defaults = {
+#  require => Package['libpam-ssh-agent-sudo'],
+#}
 
-$pam_services=hiera('pam::services', {})
-create_resources('pam::service', $pam_services, $pam_services_defaults)
+#$pam_services=hiera('pam::services', {})
+#create_resources('pam::service', $pam_services, $pam_services_defaults)
 
 $apt_repos=hiera('apt::sources', {})
-create_resources('apt::source', $apt::sources)
+create_resources('apt::source', $apt_repos)

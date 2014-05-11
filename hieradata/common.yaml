@@ -62,5 +62,5 @@ pam::services:
     content: "#%PAM-1.0\nauth pam_ssh_agent_auth.so file=/etc/security/sudo_authorized_keys\n@include common-auth\n@include common-account\n@include common-session-noninteractive"
 
 sudo::configs:
-  'pam-ssh-agent-auth'"
-    'content': 'env_keep+="SSH_AUTH_SOCK"'
+  'pam-ssh-agent-auth':
+    content: 'Defaults     env_keep+="SSH_AUTH_SOCK"'
