@@ -3,7 +3,7 @@ users { 'bootstrap': }
 
 class { 'apt' : }
 
-package { 'libpam-ssh-agent-sudo':
+package { 'libpam-ssh-agent-auth':
   ensure  => installed,
   require => Apt::Source['ifoley.local'],
 }

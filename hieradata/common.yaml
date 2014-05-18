@@ -56,6 +56,8 @@ apt::sources:
     location: 'http://i.ifoley.local/deb'
     repos: 'main'
     include_src: false
+    key: '9E7DE8E4'
+    key_source: 'http://i.ifoley.local/debian/pubkey.gpg'
 
 pam::services:
   'sudo':
