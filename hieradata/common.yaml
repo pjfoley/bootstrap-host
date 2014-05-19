@@ -53,7 +53,7 @@ vcsrepo:
 
 apt::sources:
   'ifoley.local':
-    location: 'http://i.ifoley.local/deb'
+    location: 'http://i.ifoley.local/debian'
     repos: 'main'
     include_src: false
     key: '9E7DE8E4'
