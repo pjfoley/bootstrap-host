@@ -52,3 +52,5 @@ file { '/etc/pam.d/sudo':
   owner   => 'root',
   group   => 'root',
 }
+
+notify { "What is my role ${machine_role}" : }
