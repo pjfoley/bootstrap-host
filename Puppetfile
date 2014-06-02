@@ -14,7 +14,7 @@ mod "puppetlabs/vcsrepo", '0.2.0'
 
 
 mod "puppetlabs/git", '0.0.3'
-mod "puppetlabs/ruby", '0.102'
+mod "puppetlabs/ruby", '0.1.0'
 mod "puppetlabs/gcc", '0.1.0'
 mod "puppetlabs/pe_gem", '0.0.1'
 mod "puppetlabs/inifile", '1.0.3'
