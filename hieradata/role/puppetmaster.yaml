@@ -1,0 +1,13 @@
+---
+# r10k::ensure: '1.0.0'
+r10k::config::sources:
+  puppet:
+    remote: 'git://git.ifoley.local/puppet_repository.git'
+    basedir: '%{::settings::confdir}/environments'
+  hiera:
+    remote: 'git://git.ifoley.local/hiera_environment.git'
+    basedir: '%{::settings::confdir}/hieradata'
+
+r10k::config::purgedirs:
+  - '%{::settings::confdir}/environments'
+  - '%{::settings::confdir}/hieradata'
