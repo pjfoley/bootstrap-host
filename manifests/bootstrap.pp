@@ -54,5 +54,4 @@ file { '/etc/pam.d/sudo':
 }
 
 notify { "What is my role ${machine_role}" : }
-class {'r10k':}
-class {'r10k::config':}
+hiera_include('classes')
