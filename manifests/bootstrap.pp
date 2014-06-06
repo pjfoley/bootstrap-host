@@ -54,4 +54,5 @@ file { '/etc/pam.d/sudo':
 }
 
 notify { "What is my role ${machine_role}" : }
-include r10k
+class {'r10k':}
+class {'r10k::config':}
