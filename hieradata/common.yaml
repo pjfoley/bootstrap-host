@@ -1,4 +1,8 @@
 ---
+classes:
+  - apt
+  - sudo
+  - sudo::configs
 users_bootstrap:
   root:
     ssh_authorized_keys:
