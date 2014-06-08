@@ -13,3 +13,14 @@ r10k::config::sources:
 r10k::config::purgedirs:
   - '%{::settings::confdir}/environments'
   - '%{::settings::confdir}/hieradata'
+
+ini_setting:
+  puppet_folder_environments:
+  ensure: present
+  path: '/etc/puppet/puppet.conf'
+  section: 'main'
+  setting: 'environmentpath'
+  value: '$confdir/environments'
+
+
+
