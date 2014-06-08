@@ -24,6 +24,9 @@ create_resources('dotfiles', $dotfiles_information)
 $apt_repos=hiera('apt::sources', {})
 create_resources('apt::source', $apt_repos)
 
+$my_ini_settings=hiera('ini_setting', {})
+create_resources('ini_setting', $my_ini_settings)
+
 file { '/etc/security/sudo_authorized_keys':
   ensure  => present,
   content => 'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA1ZpF3Yh5jN5aqYh/xbM0q4Ea2RVzH2PnSYRNj/z16wT6pi/QzKgWRy4KeSbIy+LBdlP+jssSL7GorcvLIOtPisJR3qIuuq/x90Z0SXRB8obZWwVJF6AOclUaqcDMMhnCN3HkDUHtQMyp5hglgVtWoSC+29LL2knWuxgG/P2kBk4lWvAHJqkOTnqkfsrHrgHfW+txUGkFTOQZkzKeVb9Hi0Eny+IA1i41AWuGtC8z6AzLJRCz9Av0vJZly+fUZVHren1alZUp6Rqhr9moherLovY7rX1xFExXeFFW45pFl1TkJeEgvNF19zr41w+EgdXBo7Ojqhy1wBnHGVgBxlzNZQ== root-root@bootstrap',

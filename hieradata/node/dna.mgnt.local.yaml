@@ -13,3 +13,13 @@ host:
     ensure: present
     host_aliases: dna
     ip: '10.0.0.101'
+
+ini_setting:
+  puppet_folder_environments:
+    ensure: present
+    path: '/etc/puppet/puppet.conf'
+    section: 'main'
+    setting: 'envrionmentpath'
+    value: '$confdir/environments'
+
+
