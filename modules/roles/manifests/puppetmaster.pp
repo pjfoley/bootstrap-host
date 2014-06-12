@@ -17,7 +17,7 @@ class roles::puppetmaster {
 
   # Need the second run due to etckeeper error during deb install
   exec { 'Setup puppetmaster':
-    command     => 'puppet apply --config /etc/puppet/puppet.conf -e "include profiles::puppetmaster"',
+    command     => 'puppet apply --config /etc/puppet/puppet.conf -e "include roles::puppetmaster"',
     refreshonly => true,
     notify      => Exec['Enable etckeeper'],
   }
