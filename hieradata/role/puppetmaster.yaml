@@ -4,14 +4,14 @@ classes:
 r10k::config::sources:
   puppet:
     remote: 'git://git.ifoley.local/puppet_repository.git'
-    basedir: '%{::settings::confdir}/environments'
+    basedir: '/etc/puppet/environments'
   hiera:
     remote: 'git://git.ifoley.local/hiera_environment.git'
-    basedir: '%{::settings::confdir}/hieradata'
+    basedir: '/etc/puppet/hieradata'
 
 r10k::config::purgedirs:
-  - '%{::settings::confdir}/environments'
-  - '%{::settings::confdir}/hieradata'
+  - '/etc/puppet/environments'
+  - '/etc/puppet/hieradata'
 
 ini_setting:
   puppet_folder_environments:
