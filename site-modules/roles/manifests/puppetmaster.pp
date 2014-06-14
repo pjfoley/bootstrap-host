@@ -6,7 +6,7 @@ class roles::puppetmaster {
   include r10k
   include r10k::config
 
-  Class['r10k::config'] ~> Exec['Download environments and hieradata']
+  Class['r10k::config'] ~> Ini_setting['puppet_folder_environments'] ~> Exec['Download environments and hieradata']
 
   Exec { path => [ '/bin/', '/sbin/' , '/usr/bin/', '/usr/sbin/', '/usr/local/bin/' ] }
 
