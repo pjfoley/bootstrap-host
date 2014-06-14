@@ -2,6 +2,7 @@
 classes:
   - r10k
   - r10k::config
+  - roles::puppetmaster
 r10k::config::sources:
   puppet:
     remote: 'git://git.ifoley.local/puppet_repository.git'
