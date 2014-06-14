@@ -14,22 +14,23 @@ class roles::puppetmaster {
   exec { 'Download environments and hieradata':
     command => 'r10k deploy environment -p -c /etc/r10k.yaml',
     notify  => Exec['Setup puppetmaster'],
-  } ->
-  exec { 'Disable etckeeper':
-    command     => 'mv /etc/apt/apt.conf.d/05etckeeper /root/tmp',
-    onlyif      => 'test -e /etc/apt/apt.conf.d/05etckeeper',
   }
+  #  ->
+  #  exec { 'Disable etckeeper':
+  #    command     => 'mv /etc/apt/apt.conf.d/05etckeeper /root/tmp',
+  #    onlyif      => 'test -e /etc/apt/apt.conf.d/05etckeeper',
+  #  }
 
   # Need the second run due to etckeeper error during deb install
   exec { 'Setup puppetmaster':
     command     => 'puppet apply --config /etc/puppet/puppet.conf -e "include profiles::puppetmaster"',
     refreshonly => true,
-    notify      => Exec['Enable etckeeper'],
+    #    notify      => Exec['Enable etckeeper'],
   }
 
-  exec { 'Enable etckeeper':
-    command     => 'mv /root/tmp/05etckeeper /etc/apt/apt.conf.d/05etckeeper',
-    onlyif      => 'test -e /root/tmp/05etckeeper',
-    refreshonly => true,
-  }
+  #  exec { 'Enable etckeeper':
+  #    command     => 'mv /root/tmp/05etckeeper /etc/apt/apt.conf.d/05etckeeper',
+  #    onlyif      => 'test -e /root/tmp/05etckeeper',
+  #    refreshonly => true,
+  #  }
 }
