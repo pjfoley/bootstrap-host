@@ -21,11 +21,9 @@ ini_setting:
     setting: 'environmentpath'
     value: '$confdir/environments'
 
-hiera:
-  /etc/puppet/hiera.yaml:
-    hierarchy:
-      - 'node/%%{}{fqdn}'
-      - 'role/%%{}{machine_role}'
-      - 'common'
+hiera::hierarchy:
+  - 'node/%%{}{fqdn}'
+  - 'role/%%{}{machine_role}'
+  - 'common'
 
 
