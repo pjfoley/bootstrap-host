@@ -23,8 +23,8 @@ ini_setting:
 
 hiera:
   hierarchy:
-    - 'node/%{fqdn}'
-    - 'role/%{machine_role}'
+    - 'node/%%{}{fqdn}'
+    - 'role/%%{}{machine_role}'
     - 'common'
 
 
