@@ -21,5 +21,10 @@ ini_setting:
     setting: 'environmentpath'
     value: '$confdir/environments'
 
+hiera:
+  hierarchy:
+    - 'node/%{fqdn}'
+    - 'role/%{machine_role}'
+    - 'common'
 
 
