@@ -26,5 +26,5 @@ hiera::hierarchy:
   - 'role/%%{}{machine_role}'
   - 'common'
 
-hiera::datadir: '/etc/puppet/hieradata/%%{}{envrionment}/'
+hiera::datadir: '/etc/puppet/hieradata/%%{}{environment}/'
 
