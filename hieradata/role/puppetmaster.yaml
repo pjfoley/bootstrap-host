@@ -13,15 +13,13 @@ r10k::config::purgedirs:
   - '/etc/puppet/environments'
   - '/etc/puppet/hieradata'
 
-#ini_setting:
-#  puppet_folder_environments:
-#    ensure: present
-#    path: '/etc/puppet/puppet.conf'
-#    section: 'main'
-#    setting: 'environmentpath'
-#    value: '$confdir/environments'
-
-puppet::master::environments: 'directory'
+ini_setting:
+  puppet_folder_environments:
+    ensure: present
+    path: '/etc/puppet/puppet.conf'
+    section: 'main'
+    setting: 'environmentpath'
+    value: '$confdir/environments'
 
 hiera::hierarchy:
   - 'node/%%{}{fqdn}'

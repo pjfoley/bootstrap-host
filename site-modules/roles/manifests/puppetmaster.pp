@@ -1,14 +1,13 @@
 class roles::puppetmaster {
 
-  #  $my_ini_settings=hiera('ini_setting', {})
-  #  create_resources('ini_setting', $my_ini_settings)
+  $my_ini_settings=hiera('ini_setting', {})
+  create_resources('ini_setting', $my_ini_settings)
 
   include r10k
   include r10k::config
   include hiera
 
-  Class['r10k::config'] ~> Class['hiera'] ~> Exec['Download environments and hieradata']
-  #  Class['r10k::config'] ~> Class['hiera'] ~> Ini_setting['puppet_folder_environments'] ~> Exec['Download environments and hieradata']
+  Class['r10k::config'] ~> Class['hiera'] ~> Ini_setting['puppet_folder_environments'] ~> Exec['Download environments and hieradata']
 
   Exec { path => [ '/bin/', '/sbin/' , '/usr/bin/', '/usr/sbin/', '/usr/local/bin/' ] }
 
