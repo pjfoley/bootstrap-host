@@ -22,8 +22,8 @@ ini_setting:
     value: '$confdir/environments'
 
 hiera::backends:
-  - yaml
-  - file
+  - 'yaml'
+  - 'file'
 
 hiera::hierarchy:
   - 'node/%%{}{fqdn}'
