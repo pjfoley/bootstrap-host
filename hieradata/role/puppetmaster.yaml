@@ -21,6 +21,10 @@ ini_setting:
     setting: 'environmentpath'
     value: '$confdir/environments'
 
+hiera::backends:
+  - yaml
+  - file
+
 hiera::hierarchy:
   - 'node/%%{}{fqdn}'
   - 'role/%%{}{machine_role}'
