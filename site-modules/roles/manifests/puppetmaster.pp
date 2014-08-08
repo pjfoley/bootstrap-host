@@ -21,5 +21,6 @@ class roles::puppetmaster {
   exec { 'Setup puppetmaster':
     command     => 'puppet apply --config /etc/puppet/puppet.conf -e "hiera_include(\'classes\')"',
     refreshonly => true,
+    logoutput   => true,
   }
 }
