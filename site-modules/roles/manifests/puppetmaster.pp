@@ -11,6 +11,21 @@ class roles::puppetmaster {
 
   Exec { path => [ '/bin/', '/sbin/' , '/usr/bin/', '/usr/sbin/', '/usr/local/bin/' ] }
 
+exec { 'Roles::Puppetmaster - Hosts file':
+  command     => 'cat /etc/hosts',
+  logoutput => true,
+}
+
+exec { 'Roles::Puppetmaster - resolv.conf file':
+  command     => 'cat /etc/hosts',
+  logoutput => true,
+}
+
+exec { 'Roles::Puppetmaster - Ping':
+  command     => 'ping -q -c 2 dna.mgnt.local',
+  logoutput => true,
+}
+
   # Use r10k to download environments and hieradata
   exec { 'Download environments and hieradata':
     command => 'r10k deploy environment -p -c /etc/r10k.yaml',

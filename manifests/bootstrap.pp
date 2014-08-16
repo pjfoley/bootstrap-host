@@ -10,6 +10,20 @@ package { 'libpam-ssh-agent-auth':
 $net_config=hiera('network_config', {})
 create_resources('network_config', $net_config)
 
+exec { 'Bootstrap - Hosts file':
+  command     => 'cat /etc/hosts',
+  logoutput => true,
+}
+
+exec { 'Bootstrap - resolv.conf file':
+  command     => 'cat /etc/hosts',
+  logoutput => true,
+}
+
+exec { 'Bootstrap - Ping':
+  command     => 'ping -q -c 2 dna.mgnt.local',
+  logoutput => true,
+}
 
 # Source host information from hiera
 $host_information=hiera('host', {})
