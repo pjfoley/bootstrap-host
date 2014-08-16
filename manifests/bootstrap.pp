@@ -12,16 +12,19 @@ create_resources('network_config', $net_config)
 
 exec { 'Bootstrap - Hosts file':
   command     => 'cat /etc/hosts',
+  path => [ '/bin/', '/sbin/' , '/usr/bin/', '/usr/sbin/', '/usr/local/bin/' ],
   logoutput => true,
 }
 
 exec { 'Bootstrap - resolv.conf file':
   command     => 'cat /etc/hosts',
+  path => [ '/bin/', '/sbin/' , '/usr/bin/', '/usr/sbin/', '/usr/local/bin/' ],
   logoutput => true,
 }
 
 exec { 'Bootstrap - Ping':
   command     => 'ping -q -c 2 dna.mgnt.local',
+  path => [ '/bin/', '/sbin/' , '/usr/bin/', '/usr/sbin/', '/usr/local/bin/' ],
   logoutput => true,
 }
 
