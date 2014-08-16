@@ -13,17 +13,17 @@ class roles::puppetmaster {
 
 exec { 'Roles::Puppetmaster - Hosts file':
   command     => 'cat /etc/hosts',
-  logoutput => true,
+  logoutput   => true,
 }
 
 exec { 'Roles::Puppetmaster - resolv.conf file':
   command     => 'cat /etc/hosts',
-  logoutput => true,
+  logoutput   => true,
 }
 
 exec { 'Roles::Puppetmaster - Ping':
-  command     => 'ping -q -c 2 dna.mgnt.local',
-  logoutput => true,
+  command     => 'ping -c 5 dna.mgnt.local',
+  logoutput   => true,
 }
 
   # Use r10k to download environments and hieradata
