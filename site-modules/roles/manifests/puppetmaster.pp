@@ -11,16 +11,6 @@ class roles::puppetmaster {
 
   Exec { path => [ '/bin/', '/sbin/' , '/usr/bin/', '/usr/sbin/', '/usr/local/bin/' ] }
 
-exec { 'Roles::Puppetmaster - Hosts file':
-  command     => 'cat /etc/hosts',
-  logoutput   => true,
-}
-
-exec { 'Roles::Puppetmaster - resolv.conf file':
-  command     => 'cat /etc/hosts',
-  logoutput   => true,
-}
-
 exec { 'Roles::Puppetmaster - Ping':
   command     => 'ping -c 5 dna.mgnt.local',
   logoutput   => true,
