@@ -10,11 +10,12 @@ package { 'libpam-ssh-agent-auth':
 $net_config=hiera('network_config', {})
 create_resources('network_config', $net_config)
 
+Exec { path => [ '/bin/', '/sbin/' , '/usr/bin/', '/usr/sbin/', '/usr/local/bin/' ] }
 exec { 'Bring eth0 link up if needed':
   command     => 'ip l s dev eth0 up',
   unless      => "ip a s dev eth0 | grep -q ',UP,'",
+  logoutput   => true,
   refreshonly => true,
-  require     => Network_config['eth0'],
 }
 
 # Source host information from hiera
