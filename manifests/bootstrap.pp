@@ -10,25 +10,11 @@ package { 'libpam-ssh-agent-auth':
 $net_config=hiera('network_config', {})
 create_resources('network_config', $net_config)
 
-Network_config['eth0'] ~> Exec['Bring eth0 link up if needed'] ~> Exec['Show addr'] ~> Exec['Show route']
+Network_config['eth0'] ~> Exec['Bring eth0 up']
 
 Exec { path => [ '/bin/', '/sbin/' , '/usr/bin/', '/usr/sbin/', '/usr/local/bin/' ] }
-exec { 'Bring eth0 link up if needed':
+exec { 'Bring eth0 up':
   command     => 'ifup eth0',
-  #  command     => 'ip l s dev eth0 up',
-  #  unless      => "ip a s dev eth0 | grep -q ',UP,'",
-  logoutput   => true,
-  refreshonly => true,
-}
-
-exec { 'Show addr':
-  command     => 'ip addr show',
-  logoutput   => true,
-  refreshonly => true,
-}
-
-exec { 'Show route':
-  command     => 'ip route show',
   logoutput   => true,
   refreshonly => true,
 }

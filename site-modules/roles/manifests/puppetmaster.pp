@@ -11,11 +11,6 @@ class roles::puppetmaster {
 
   Exec { path => [ '/bin/', '/sbin/' , '/usr/bin/', '/usr/sbin/', '/usr/local/bin/' ] }
 
-exec { 'Roles::Puppetmaster - Ping':
-  command     => 'ping -c 5 dna.mgnt.local',
-  logoutput   => true,
-}
-
   # Use r10k to download environments and hieradata
   exec { 'Download environments and hieradata':
     command => 'r10k deploy environment -p -c /etc/r10k.yaml',
