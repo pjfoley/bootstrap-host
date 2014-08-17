@@ -14,7 +14,8 @@ Network_config['eth0'] ~> Exec['Bring eth0 link up if needed'] ~> Exec['Show add
 
 Exec { path => [ '/bin/', '/sbin/' , '/usr/bin/', '/usr/sbin/', '/usr/local/bin/' ] }
 exec { 'Bring eth0 link up if needed':
-  command     => 'ip l s dev eth0 up',
+  command     => 'ifup eth0',
+  #  command     => 'ip l s dev eth0 up',
   #  unless      => "ip a s dev eth0 | grep -q ',UP,'",
   logoutput   => true,
   refreshonly => true,
