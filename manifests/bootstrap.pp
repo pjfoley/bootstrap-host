@@ -6,6 +6,11 @@ package { 'libpam-ssh-agent-auth':
   require => Apt::Source['ifoley.local'],
 }
 
+package { 'hiera-file':
+  ensure   => installed,
+  provider => 'gem',
+}
+
 # Source network information from hiera
 $net_config=hiera('network_config', {})
 create_resources('network_config', $net_config)
