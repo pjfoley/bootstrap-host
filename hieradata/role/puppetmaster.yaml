@@ -22,13 +22,17 @@ ini_setting:
     value: '$confdir/environments'
 
 hiera::backends:
-  - 'yaml'
-  - 'file'
+  yaml:
+    datadir: '/etc/puppet/hieradata/%%{}{environment}/'
+  file:
+    datadir: '/etc/puppet/hieradata/%%{}{environment}/'
+  eyaml:
+    datadir: '/etc/puppet/hieradata/%%{}{environment}/'
+    pkcs7_private_key: '/etc/puppet/keys/private_key.pkcs7.pem'
+    pkcs7_public_key: '/etc/puppet/keys/public_key.pkcs7.pem'
 
 hiera::hierarchy:
   - 'node/%%{}{fqdn}'
   - 'role/%%{}{machine_role}'
   - 'common'
-
-hiera::datadir: '/etc/puppet/hieradata/%%{}{environment}/'
 
