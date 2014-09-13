@@ -20,4 +20,4 @@ mod 'dotfiles',
   :ref => '0.1.1'
 
 mod 'hiera',
-  :git => 'git://github.com/pjfoley/pjfoley-hiera.git'
+  :git => 'git://github.com/pjfoley/puppet-hiera.git'
